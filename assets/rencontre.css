@@ -113,7 +113,8 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	color: var(--mg-creme);
 	text-align: center;
 }
-.mg-hero__inner { max-width: 640px; margin: 0 auto; }
+.mg-hero__inner { max-width: 640px; margin: auto; }
+.mg-hero__pied { max-width: 640px; margin: 56px auto 0; }
 .mg-hero__titre {
 	font-size: 42px;
 	font-weight: 500;
@@ -124,18 +125,22 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	color: var(--mg-creme);
 }
 .mg-hero__texte { font-size: 19px; color: rgba(248, 247, 244, .88); }
-.mg-hero__texte + .mg-hero__texte { margin-top: 14px; }
-.mg-hero__mots {
-	margin: 30px 0 22px;
+.mg-hero__texte + .mg-hero__texte { margin-top: 18px; }
+.mg-hero .mg-hero__mots {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	margin: 44px 0 0;
 	font-size: 13px;
 	font-weight: 600;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	color: var(--mg-or-2);
 }
-.mg-hero__mots span { margin: 0 6px; opacity: .6; }
+.mg-hero__sep { display: none; margin: 0 10px; opacity: .6; }
 .mg-hero__bienvenue { font-style: italic; font-weight: 500; font-size: 21px; letter-spacing: 1px; }
-.mg-hero__salon { margin-top: 38px; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(248, 247, 244, .55); }
+.mg-hero .mg-hero__salon { margin-top: 16px; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(248, 247, 244, .55); }
 .mg-hero__fleche {
 	position: absolute;
 	left: 50%;
@@ -422,7 +427,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 
 /* Merci */
 .mg-hero--merci { min-height: 100svh; padding-bottom: 72px; }
-.mg-hero--merci .mg-hero__mots { margin: 6px 0 26px; }
+.mg-hero--merci .mg-hero__mots { display: block; margin: 6px 0 26px; }
 .mg-hero__bientot { margin-top: 26px !important; font-style: italic; }
 .mg-merci__marque { margin-top: 36px; font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
 .mg-signature--clair { margin-top: 10px; color: var(--mg-creme); }
@@ -455,6 +460,9 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	.mg-bouton__long { display: inline; }
 	.mg-bouton__court { display: none; }
 	.mg-hero__titre { font-size: 50px; }
+	.mg-hero .mg-hero__mots { display: block; margin-top: 52px; }
+	.mg-hero__sep { display: inline; }
+	.mg-hero__pied { margin-top: 72px; }
 	.mg-titre { font-size: 36px; }
 	.mg-unique__accroche { font-size: 34px; }
 }
