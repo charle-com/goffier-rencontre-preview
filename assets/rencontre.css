@@ -23,7 +23,6 @@
 	--mg-nuit-2: #14263a;
 	--mg-or: #c3b181;
 	--mg-or-2: #c7b689;
-	--mg-or-fonce: #a68d55;
 	--mg-creme: #f8f7f4;
 	--mg-blanc: #ffffff;
 	--mg-pierre: #5b5757;
@@ -61,7 +60,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	font-weight: 600;
 	letter-spacing: 4px;
 	text-transform: uppercase;
-	color: var(--mg-or-fonce);
+	color: var(--mg-or);
 }
 /* Filet doré court : le lien entre le surtitre et le titre (demande Thierry, 02/09) */
 .mg-surtitre::after { content: ''; display: block; width: 40px; height: 1px; margin: 16px 0 0; background: var(--mg-or); }
@@ -250,7 +249,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-unique .mg-section__inner { max-width: 680px; }
 .mg-unique .mg-texte { margin-left: auto; margin-right: auto; }
 .mg-unique__accroche { margin: 22px 0 28px; font-size: 30px; font-weight: 500; line-height: 1.2; letter-spacing: .5px; }
-.mg-unique__mots { margin: 44px 0; font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--mg-or-fonce); }
+.mg-unique__mots { margin: 44px 0; font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--mg-or); }
 .mg-unique .mg-signature { margin-top: 52px; }
 
 /* Formulaire */
