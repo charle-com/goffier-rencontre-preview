@@ -254,6 +254,8 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 
 /* Formulaire */
 .mg-form-section { background: var(--mg-creme); }
+.mg-form__intro { max-width: 680px; margin: 0 auto 44px; }
+.mg-form__intro .mg-chapo { margin-top: 22px; }
 .mg-form { max-width: 680px; margin: 0 auto; }
 .mg-groupe + .mg-groupe { margin-top: 40px; }
 .mg-question {
@@ -446,7 +448,12 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-merci__marque { margin-top: 36px; font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
 .mg-signature--clair { margin-top: 10px; color: var(--mg-creme); }
 .mg-merci__devise { margin-top: 6px; font-style: italic; font-size: 17px; letter-spacing: 1px; color: var(--mg-or-2); }
-.mg-merci__retour { margin-top: 44px; }
+.mg-merci__liens { margin-top: 44px; }
+.mg-merci__liens-titre { font-size: 15px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--mg-or-2); }
+.mg-merci__retour { margin-top: 18px; }
+.mg-merci__retour + .mg-merci__retour { margin-top: 12px; }
+.mg-hero--merci .mg-hero__bientot { margin-top: 44px !important; }
+.mg-merci__marque { margin-top: 28px; }
 .mg-merci__retour a { display: inline-block; padding: 12px 22px; border: 1px solid var(--mg-or); color: var(--mg-or-2); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
 .mg-merci__retour a:hover { background: var(--mg-or); color: var(--mg-nuit); text-decoration: none; }
 
