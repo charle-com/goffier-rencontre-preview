@@ -23,6 +23,7 @@
 	--mg-nuit-2: #14263a;
 	--mg-or: #c3b181;
 	--mg-or-2: #c7b689;
+	--mg-or-fonce: #a68d55;
 	--mg-creme: #f8f7f4;
 	--mg-blanc: #ffffff;
 	--mg-pierre: #5b5757;
@@ -45,7 +46,8 @@ body.mg-rencontre {
 }
 body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-rencontre * { box-sizing: border-box; }
-.mg-rencontre h1, .mg-rencontre h2, .mg-rencontre h3, .mg-rencontre p, .mg-rencontre ul, .mg-rencontre fieldset { margin: 0; padding: 0; }
+/* Reset en spécificité nulle (:where) : les marges posées par les classes .mg-* gagnent toujours. */
+:where(.mg-rencontre) :where(h1, h2, h3, p, ul, fieldset) { margin: 0; padding: 0; }
 .mg-rencontre fieldset { border: 0; min-width: 0; }
 .mg-rencontre legend { padding: 0; }
 .mg-rencontre a { color: var(--mg-or); text-decoration: none; }
@@ -55,32 +57,38 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 
 /* Typographie commune */
 .mg-surtitre {
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 600;
-	letter-spacing: 3px;
+	letter-spacing: 4px;
 	text-transform: uppercase;
-	color: var(--mg-or-2);
+	color: var(--mg-or-fonce);
 }
+/* Filet doré court : le lien entre le surtitre et le titre (demande Thierry, 02/09) */
+.mg-surtitre::after { content: ''; display: block; width: 40px; height: 1px; margin: 16px 0 0; background: var(--mg-or); }
+.mg-hero .mg-surtitre, .mg-unique .mg-surtitre { text-align: center; }
+.mg-hero .mg-surtitre::after, .mg-unique .mg-surtitre::after { margin-left: auto; margin-right: auto; }
+.mg-hero .mg-surtitre { color: var(--mg-or-2); }
+.mg-hero .mg-surtitre::after { background: var(--mg-or-2); }
 .mg-titre {
 	font-size: 30px;
 	font-weight: 500;
 	line-height: 1.15;
 	letter-spacing: .5px;
-	margin-top: 10px;
+	margin-top: 22px;
 }
 .mg-chapo, .mg-texte { font-size: 19px; max-width: 640px; }
-.mg-chapo { margin-top: 14px; }
-.mg-texte + .mg-texte { margin-top: 12px; }
+.mg-chapo { margin-top: 20px; }
+.mg-texte + .mg-texte { margin-top: 16px; }
 .mg-signature {
 	font-style: italic;
-	font-weight: 500;
-	font-size: 21px;
-	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 22px;
+	letter-spacing: 1.5px;
 	color: var(--mg-nuit);
 }
 
 /* Sections */
-.mg-section { padding: 56px var(--mg-marge); }
+.mg-section { padding: 64px var(--mg-marge); }
 .mg-section__inner { max-width: var(--mg-largeur); margin: 0 auto; }
 
 /* Bascule FR / EN */
@@ -114,14 +122,18 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	text-align: center;
 }
 .mg-hero__inner { max-width: 640px; margin: auto; }
+.mg-hero__logo { width: 220px; margin: 0 auto 28px; }
+.mg-hero__logo img { width: 100%; }
+.mg-hero__photo { margin: 48px auto 0; padding: 6px; border: 1px solid rgba(195, 177, 129, .5); }
+.mg-hero__photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .mg-hero__pied { max-width: 640px; margin: 56px auto 0; }
 .mg-hero__titre {
-	font-size: 42px;
+	font-size: 34px;
 	font-weight: 500;
 	line-height: 1.1;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	margin: 22px 0 26px;
+	margin: 20px 0 28px;
 	color: var(--mg-creme);
 }
 .mg-hero__texte { font-size: 19px; color: rgba(248, 247, 244, .88); }
@@ -131,7 +143,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	flex-direction: column;
 	align-items: center;
 	gap: 14px;
-	margin: 44px 0 0;
+	margin: 48px 0 0;
 	font-size: 13px;
 	font-weight: 600;
 	letter-spacing: 3px;
@@ -170,7 +182,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 28px;
-	margin-top: 36px;
+	margin-top: 48px;
 }
 .mg-carte {
 	position: relative;
@@ -234,9 +246,9 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-unique { background: var(--mg-blanc); border-top: 1px solid var(--mg-trait); border-bottom: 1px solid var(--mg-trait); text-align: center; }
 .mg-unique .mg-section__inner { max-width: 680px; }
 .mg-unique .mg-texte { margin-left: auto; margin-right: auto; }
-.mg-unique__accroche { margin: 14px 0 22px; font-size: 30px; font-weight: 500; line-height: 1.2; letter-spacing: .5px; }
-.mg-unique__mots { margin: 28px 0; font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--mg-or-2); }
-.mg-unique .mg-signature { margin-top: 34px; }
+.mg-unique__accroche { margin: 22px 0 28px; font-size: 30px; font-weight: 500; line-height: 1.2; letter-spacing: .5px; }
+.mg-unique__mots { margin: 44px 0; font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--mg-or-fonce); }
+.mg-unique .mg-signature { margin-top: 52px; }
 
 /* Formulaire */
 .mg-form-section { background: var(--mg-creme); }
@@ -350,7 +362,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-vous { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px; margin-top: 14px; }
 .mg-vous__libelle { font-size: 16px; font-style: italic; color: var(--mg-pierre); margin-right: 4px; }
 .mg-option--ligne { padding: 6px 0; }
-/* Un particulier n'a pas de société à renseigner : le champ s'efface (repli sans :has() : champ toujours visible). */
+/* Un particulier n'a ni société ni fonction à renseigner : les deux champs s'effacent (repli sans :has() : champs toujours visibles). */
 .mg-contact:has(input[name="type_contact"][value="particulier"]:checked) .mg-champ-groupe--societe { display: none; }
 .mg-tel { display: flex; gap: 14px; }
 .mg-champ--indicatif { flex: 0 0 76px; text-align: center; }
@@ -451,7 +463,9 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 /* Tablette */
 @media (min-width: 640px) {
 	:root { --mg-marge: 40px; }
-	.mg-section { padding: 72px var(--mg-marge); }
+	.mg-section { padding: 88px var(--mg-marge); }
+	.mg-surtitre { font-size: 16px; }
+	.mg-hero__logo { width: 280px; }
 	.mg-cartes { grid-template-columns: repeat(2, 1fr); }
 	.mg-pilules { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 	.mg-champs { grid-template-columns: repeat(2, 1fr); column-gap: 28px; }
@@ -459,7 +473,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	.mg-bouton { width: auto; min-width: 360px; margin-left: auto; margin-right: auto; }
 	.mg-bouton__long { display: inline; }
 	.mg-bouton__court { display: none; }
-	.mg-hero__titre { font-size: 50px; }
+	.mg-hero__titre { font-size: 40px; }
 	.mg-hero .mg-hero__mots { display: block; margin-top: 52px; }
 	.mg-hero__sep { display: inline; }
 	.mg-hero__pied { margin-top: 72px; }
@@ -469,12 +483,13 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 
 /* Bureau */
 @media (min-width: 1024px) {
-	.mg-section { padding: 88px var(--mg-marge); }
+	.mg-section { padding: 112px var(--mg-marge); }
+	.mg-hero__logo { width: 320px; }
 	.mg-cartes { grid-template-columns: repeat(4, 1fr); gap: 24px; }
 	.mg-carte__nom { font-size: 21px; }
 	.mg-carte__texte { font-size: 16px; }
 	.mg-carte__bouton { padding-left: 14px; padding-right: 14px; font-size: 12px; letter-spacing: 1.5px; }
 	.mg-hero { min-height: 84svh; }
-	.mg-hero__titre { font-size: 56px; }
+	.mg-hero__titre { font-size: 44px; }
 	.mg-barre { padding-left: 40px; padding-right: 40px; }
 }
