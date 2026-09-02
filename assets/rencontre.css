@@ -186,6 +186,8 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 }
 .mg-carte {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	background: var(--mg-blanc);
 	border: 1px solid var(--mg-trait);
 	transition: border-color .25s ease, box-shadow .25s ease;
@@ -201,14 +203,15 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 }
 .mg-carte__visuel { aspect-ratio: 4 / 5; overflow: hidden; background: #f1f0ec; }
 .mg-carte__visuel img { width: 100%; height: 100%; object-fit: cover; }
-.mg-carte__corps { padding: 20px 22px 24px; }
+/* Corps en colonne flexible : le bouton se cale en bas, aligné d'une carte à l'autre quelle que soit la longueur du texte. */
+.mg-carte__corps { display: flex; flex-direction: column; flex: 1 1 auto; padding: 20px 22px 24px; }
 .mg-carte__nom { font-size: 24px; font-weight: 500; letter-spacing: .5px; text-transform: uppercase; }
-.mg-carte__texte { margin-top: 6px; font-size: 17px; line-height: 1.5; color: var(--mg-pierre); min-height: 3em; }
+.mg-carte__texte { margin: 6px 0 22px; font-size: 17px; line-height: 1.5; color: var(--mg-pierre); }
 .mg-carte__bouton {
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
-	margin-top: 18px;
+	margin-top: auto;
 	padding: 12px 20px 11px 16px;
 	border: 1px solid var(--mg-or);
 	color: var(--mg-nuit);
