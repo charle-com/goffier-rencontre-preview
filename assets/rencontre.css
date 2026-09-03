@@ -75,6 +75,7 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	letter-spacing: .5px;
 	margin-top: 22px;
 }
+.mg-titre--seul { margin-top: 0; }
 .mg-chapo, .mg-texte { font-size: 19px; max-width: 640px; }
 .mg-chapo { margin-top: 20px; }
 .mg-texte + .mg-texte { margin-top: 16px; }
