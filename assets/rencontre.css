@@ -126,7 +126,10 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-hero__logo img { width: 100%; }
 .mg-hero__photo { margin: 48px auto 0; padding: 6px; border: 1px solid rgba(195, 177, 129, .5); }
 .mg-hero__photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-.mg-hero__pied { max-width: 640px; margin: 56px auto 0; }
+.mg-hero__pied { max-width: 640px; margin: 48px auto 0; }
+.mg-creations__invite { max-width: 640px; margin: 0 0 32px; font-style: italic; font-weight: 500; font-size: 21px; letter-spacing: 1px; line-height: 1.5; }
+.mg-form__signature { margin: 56px auto 0; width: 44px; }
+.mg-form__signature img { width: 100%; }
 .mg-hero__titre {
 	font-size: 34px;
 	font-weight: 500;
