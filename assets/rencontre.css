@@ -75,7 +75,6 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 	letter-spacing: .5px;
 	margin-top: 22px;
 }
-.mg-titre--seul { margin-top: 0; }
 .mg-chapo, .mg-texte { font-size: 19px; max-width: 640px; }
 .mg-chapo { margin-top: 20px; }
 .mg-texte + .mg-texte { margin-top: 16px; }
@@ -127,7 +126,6 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 .mg-hero__photo { margin: 48px auto 0; padding: 6px; border: 1px solid rgba(195, 177, 129, .5); }
 .mg-hero__photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .mg-hero__pied { max-width: 640px; margin: 48px auto 0; }
-.mg-creations__invite { max-width: 640px; margin: 0 0 32px; font-style: italic; font-weight: 500; font-size: 21px; letter-spacing: 1px; line-height: 1.5; }
 .mg-form__signature { margin: 56px auto 0; width: 44px; }
 .mg-form__signature img { width: 100%; }
 .mg-hero__titre {
@@ -180,6 +178,25 @@ body.mg-rencontre.mg-barre-visible { padding-bottom: 72px; }
 
 /* Créations */
 .mg-creations { background: var(--mg-creme); }
+/* Tête de section : l'invitation de Thierry ouvre la deuxième partie de la page (03/09/2026).
+   Elle prend la place du surtitre dans le système de tête de section : une seule mesure pour
+   l'invitation, le titre et le chapô, le filet doré de 40 px en lien vers le titre, et le rythme
+   vertical commun (filet à 16 px, titre à 22 px, chapô à 20 px). */
+.mg-creations__tete { max-width: 640px; }
+.mg-creations__invite {
+	margin: 0;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 21px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	text-wrap: balance;
+}
+.mg-creations__invite::after { content: ''; display: block; width: 40px; height: 1px; margin: 16px 0 0; background: var(--mg-or); }
+.mg-creations__invite + .mg-titre { margin-top: 22px; }
+/* Si le surtitre des créations est un jour remis, c'est lui qui porte le filet, pas l'invitation. */
+.mg-surtitre + .mg-creations__invite { margin-top: 22px; }
+.mg-surtitre + .mg-creations__invite::after { display: none; }
 .mg-cartes {
 	list-style: none;
 	display: grid;

@@ -7,7 +7,7 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="preload" href="assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cormorant-garamond-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
-<title>Maison Goffier, Paris</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="assets/rencontre.css?v=1788470801"></head>
+<title>Maison Goffier, Paris</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="assets/rencontre.css?v=1788517616"></head>
 <body class="mg-rencontre mg-ecran-page mg-lang-fr">
 <header class="mg-hero">
 	<nav class="mg-langues" aria-label="Langue / Language">
@@ -36,9 +36,14 @@
 </header>
 <section class="mg-section mg-creations" id="mg-creations">
 	<div class="mg-section__inner">
-				<p class="mg-creations__invite">Découvrez nos créations, sélectionnez celles qui vous plaisent.<br>Si vous le souhaitez, partagez avec nous votre projet.</p>
-		<h2 class="mg-titre mg-titre--seul">Quatre expressions de la matière</h2>
-		<p class="mg-chapo">Pour cette première présentation, Maison Goffier dévoile quatre interprétations de son travail de la pâte de verre.</p>
+		<!-- Tete de section : l'invitation ouvre la deuxieme partie de la page (demande Thierry, 03/09/2026).
+		     Elle occupe la place du surtitre dans le systeme de tete de section : meme mesure, meme filet dore,
+		     meme rythme vertical que les autres sections. -->
+		<div class="mg-creations__tete">
+						<p class="mg-creations__invite">Découvrez nos créations, sélectionnez celles qui vous plaisent.<br>Si vous le souhaitez, partagez avec nous votre projet.</p>
+			<h2 class="mg-titre">Quatre expressions de la matière</h2>
+			<p class="mg-chapo">Pour cette première présentation, Maison Goffier dévoile quatre interprétations de son travail de la pâte de verre.</p>
+		</div>
 
 		<ul class="mg-cartes" role="list">
 						<li class="mg-carte">
@@ -137,7 +142,7 @@
 		<form class="mg-form" id="mg-form" method="post" action="https://maisongoffier.com/wp-admin/admin-post.php" novalidate>
 			<input type="hidden" name="action" value="mg_rencontre_lead">
 			<input type="hidden" name="page_langue" value="fr">
-			<input type="hidden" name="mg_t" id="mg-t" value="1788470847.2330d9b1f1c8d05b4c35">
+			<input type="hidden" name="mg_t" id="mg-t" value="1788517724.e6fad31e73c5c26306cd">
 			<p class="mg-hp" aria-hidden="true"><label for="mg-site-web">Votre site web</label><input type="text" id="mg-site-web" name="mg_site_web" tabindex="-1" autocomplete="off"></p>
 
 						<p class="mg-form__erreur" id="mg-erreur" role="alert" hidden></p>
